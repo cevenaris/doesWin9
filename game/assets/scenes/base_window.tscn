@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/base_window.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Roboto-Black.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 5 )
+
+[node name="window" type="WindowDialog"]
+visible = true
+anchor_top = -0.00180373
+anchor_bottom = -0.0018037
+margin_right = 960.0
+margin_bottom = 540.0
+hint_tooltip = "Hint goes here"
+custom_fonts/title_font = SubResource( 1 )
+custom_colors/title_color = Color( 0, 0, 0, 1 )
+window_title = "base window"
+resizable = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
