@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tests/windowTest.gd" type="Script" id=1]
+[ext_resource path="res://tests/new_dynamicfont.tres" type="DynamicFont" id=2]
+
+[node name="windowTest" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+visible = true
+margin_left = 430.512
+margin_top = 243.502
+margin_right = 1390.51
+margin_bottom = 783.502
+window_title = "test"
+resizable = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowDialog"]
+margin_right = 960.0
+margin_bottom = 540.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="WindowDialog/VBoxContainer"]
+margin_right = 960.0
+margin_bottom = 177.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.33
+custom_fonts/font = ExtResource( 2 )
+text = "button1"
+
+[node name="Label" type="Label" parent="WindowDialog/VBoxContainer"]
+margin_top = 181.0
+margin_right = 960.0
+margin_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.33
+custom_fonts/font = ExtResource( 2 )
+text = "Label1"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="WindowDialog/VBoxContainer"]
+margin_top = 362.0
+margin_right = 960.0
+margin_bottom = 540.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.33
+
+[node name="colorPicker" type="ColorPickerButton" parent="WindowDialog/VBoxContainer/HSplitContainer"]
+margin_right = 474.0
+margin_bottom = 178.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+text = "Pick color"
+color = Color( 0.568627, 0.247059, 0.247059, 1 )
+
+[node name="richText" type="RichTextLabel" parent="WindowDialog/VBoxContainer/HSplitContainer"]
+margin_left = 486.0
+margin_right = 960.0
+margin_bottom = 178.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+text = "Rich text label"
+[connection signal="resized" from="WindowDialog" to="." method="_on_WindowDialog_resized"]
